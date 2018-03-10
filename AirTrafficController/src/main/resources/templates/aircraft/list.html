@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../static/css/site.css" th:href="@{/css/site.css}"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />	
+		<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+		<title>ATC Queue</title>
+	</head>
+	<body>
+		<div th:fragment="content">
+			<h2>Air Traffic Queue</h2>
+			<br/>
+		    	<table class="table table-striped">
+				<thead class="thead-dark"> 
+					<tr> 
+						<th>Priority</th> 
+						<th>Aircraft code</th> 
+						<th>Aircraft type</th> 
+						<th>Aircraft size</th> 
+					</tr> 
+				</thead>
+				<tbody>
+					<tr th:each="ac, itr : ${list}">
+						<td th:text="${itr.count}">1</td>
+						<td th:text="${ac.code}">code</td>
+						<td th:text="${ac.type.toString()}">type</td>
+						<td th:text="${ac.size.toString()}">size</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+	</body>
+</html>
