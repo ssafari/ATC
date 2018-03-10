@@ -118,10 +118,6 @@ public class QueueLinkedList<T> {
 		return listIterator;
 	}
 	
-	/*public Iterator<T> iterator(Class<T> clazz) {
-		return new ListIterator<T>(this.head, clazz);
-	}*/
-	
 	private static class ListIterator<T>  implements Iterator<T> {
 		private Node<T> nextNode;
 		private Class<T> clazz;
