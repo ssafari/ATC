@@ -69,7 +69,7 @@ public class ATCRestController {
 	}
 	
 	@PostMapping("/air-controller/traffic/enqueue")
-	public ResponseEntity<?> registerCustomer(@RequestBody AirCraft plane) {	
+	public ResponseEntity<?> addAircraft(@RequestBody AirCraft plane) {	
 		try {
 			atcq.add(plane, AirCraft.class);
 			database.save(plane);
